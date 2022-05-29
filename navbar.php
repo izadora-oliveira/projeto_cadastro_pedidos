@@ -8,7 +8,7 @@
           <a class="nav-link" href="itens.php">Itens</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="NovoPedido.php">Novo Pedido</a>
+          <a class="nav-link" href="#">Novo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="novoItem.php">Novo Item</a>

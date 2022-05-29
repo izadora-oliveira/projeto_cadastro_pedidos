@@ -3,7 +3,8 @@
 require("conexao.php");
 
 $item = $_POST['item'];
-$preco = $_POST['preco'];
+$valor = $_POST['preco'];
+$preco = str_replace(",",".",$valor);
 
 $stmt = $conn->prepare("INSERT INTO itens (nome,preco) VALUES (?,?)");
 $stmt->bind_param("sd", $item, $preco);

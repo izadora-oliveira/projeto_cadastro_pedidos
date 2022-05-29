@@ -23,33 +23,35 @@ require "getItens.php";
             </tr>
         </thead>
         <tbody>
-        <?php 
+        <?php
             $cont = 0;
             foreach ($itens as $item) {
             $itens = explode('#', $item);
         ?>
                 <tr>
-                <form method="post" action="adicionarPedido.php">
+                <form method="post" action="adicionarCarrinho.php">
                   <?php
                     echo "<td name ='codigo' class='table-Default'>";
-                    echo "<input type='hidden' name='codigo' value='$itens[0]'/>$itens[0]";
+                    echo "<input type='hidden' name='codigo' id='codigo' value='$itens[0]'/>$itens[0]";
                     echo "</td>";
                     echo "<td name='nome' class='table-Default'>";
-                    echo "<input type='hidden' name='nome' value='$itens[1]'/>$itens[1]";
+                    echo "<input type='hidden' name='nome' id='nome' value='$itens[1]'/>$itens[1]";
                     echo "</td>";
                     echo "<td name='preco' class='table-Default'>";
-                    echo "<input type='hidden' name='preco' value='$itens[2]'/>$itens[2]";
+                    echo "<input type='hidden' name='preco' id='preco' value='$itens[2]'/>$itens[2]";
                     echo "</td>";
                     echo "<td name='quantidade' class='table-Default'>";
-                    echo "<input type='number' name='quantidade'/>";
+                    echo "<input type='number' name='quantidade' id='quantidade'/>";
                     echo "</td>";
                     echo "<td name='adicionar' class='table-Default'>";
                     echo "<button type='submit' class='btn btn-success btn-sm'>Adicionar</button>";
                     echo "</td>";
+                    ?> 
+                    </form>
+                    </tr>
+                    <?php
                     }
                   ?>
-                </form>
-                </tr>
                 </thead>
         </tbody>
         </table>
