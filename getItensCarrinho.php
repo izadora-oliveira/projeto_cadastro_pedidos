@@ -13,4 +13,3 @@ if ($result->num_rows > 0) {
         window.alert('Você não possui itens cadastrados.')
     </script>");
 }
-$conn->close();

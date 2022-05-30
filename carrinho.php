@@ -26,7 +26,6 @@ require("getItensCarrinho.php");
         </thead>
         <tbody>
           <?php
-          $cont = 0;
           $total = 0;
           foreach ($itenscarrinho as $item)
           {
