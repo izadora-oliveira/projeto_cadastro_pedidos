@@ -90,6 +90,12 @@ foreach($info_cli as $cli){
                         }
                         ?>
                     </ol>
+                    <div>
+                        <form method="post" action="deletePedido.php">
+                        <input type='hidden' name='cod_cli' id='cod_cli' value='<?php echo $cli[0] ?>'/>
+                        <button type='submit' class='btn btn-danger btn-sm'>Excluir</button>
+                        </form>
+                    </div>
                 </div>
                 </div>
         </div>

@@ -38,7 +38,7 @@ require "getItens.php";
                     echo "<input type='hidden' name='nome' id='nome' value='$itens[1]'/>$itens[1]";
                     echo "</td>";
                     echo "<td name='preco' class='table-Default'>";
-                    echo "<input type='hidden' name='preco' id='preco' value='$itens[2]'/>$itens[2]";
+                    echo "<input type='hidden' name='preco' id='preco' value='$itens[2]'/>R$ $itens[2]";
                     echo "</td>";
                     echo "<td name='quantidade' class='table-Default'>";
                     echo "<input type='number' name='quantidade' id='quantidade'/>";
