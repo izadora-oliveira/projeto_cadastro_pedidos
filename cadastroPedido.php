@@ -8,12 +8,13 @@ $endereco = $_POST['endereco'];
 $dataentrega = $_POST['dataentrega'];
 $hora = $_POST['hora'];
 $obs = $_POST['observacao'];
+$data_cadastro = date('Y-m-d');
 
-$stmt = $conn->prepare("INSERT INTO info_pedidos (nome,endereco,data_entrega,hora,obs) VALUES (?,?,?,?,?)");
-$stmt->bind_param("sssss",$nome,$endereco,$dataentrega,$hora,$obs);
+$stmt = $conn->prepare("INSERT INTO info_pedido (nome_cli,endereco,data_entrega,hora,obs,data_cadastro) VALUES (?,?,?,?,?,?)");
+$stmt->bind_param("ssssss",$nome,$endereco,$dataentrega,$hora,$obs,$data_cadastro);
 $stmt->execute();
 
-$query_ = "SELECT cod_cli FROM info_pedidos where nome = '$nome'";
+$query_ = "SELECT cod_cli FROM info_pedido where nome_cli = '$nome'";
 $result = $conn->query($query_);
 
 if ($result->num_rows > 0)
