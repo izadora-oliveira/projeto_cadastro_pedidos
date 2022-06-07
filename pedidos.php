@@ -90,11 +90,16 @@ foreach($info_cli as $cli){
                         }
                         ?>
                     </ol>
-                    <div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <form method="post" action="updatePedido.php">
+                        <input type='hidden' name='cod_cli' id='cod_cli' value='<?php echo $cli[0] ?>'/>
+                        <button type='submit' class='btn btn-success btn-sm'>Alterar</button>
+                        </form>
                         <form method="post" action="deletePedido.php">
                         <input type='hidden' name='cod_cli' id='cod_cli' value='<?php echo $cli[0] ?>'/>
                         <button type='submit' class='btn btn-danger btn-sm'>Excluir</button>
                         </form>
+                        
                     </div>
                 </div>
                 </div>
