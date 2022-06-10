@@ -5,7 +5,7 @@ $result = $conn->query($query_);
 $itenscarrinho = array();
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
-    $itenscarrinho[] = $row['codigo'] . '#' . $row['nome'] . "#" . $row['preco']. "#" . $row['quantidade']. "#" . $row['subtotal'];
+    $itenscarrinho[] = [$row['codigo'],$row['nome'],$row['preco'],$row['quantidade'],$row['subtotal']];
   }
 } else {
 

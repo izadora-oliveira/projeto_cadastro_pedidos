@@ -9,7 +9,7 @@ include("navbar.php");
 require "getItens.php";
 ?>
 
-<div class="card" style="width: 40rem;">
+<div class="card" style="width: 50rem;">
     <div class="card-body">
       <h5 class="card-title">Itens</h5>
         <table class="table">
@@ -20,6 +20,7 @@ require "getItens.php";
             <th scope="col">Preço</th>
             <th scope="col">Quantidade</th>
             <th scope="col">Adicionar</th>
+            <th scope="col">Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +30,7 @@ require "getItens.php";
             $itens = explode('#', $item);
         ?>
                 <tr>
-                <form method="post" action="adicionarCarrinho.php">
+                <form method="post" action="manager.php">
                   <?php
                     echo "<td name ='codigo' class='table-Default'>";
                     echo "<input type='hidden' name='codigo' id='codigo' value='$itens[0]'/>$itens[0]";
@@ -45,6 +46,16 @@ require "getItens.php";
                     echo "</td>";
                     echo "<td name='adicionar' class='table-Default'>";
                     echo "<button type='submit' class='btn btn-success btn-sm'>Adicionar</button>";
+                    echo "</td>";
+                    echo "<input type='hidden' name='acao' id='acao' value='adicionarItemCarrinho'/>";
+                    ?>
+                    </form>
+                    <form method="post" action="manager.php">
+                    <?php
+                    echo "<input type='hidden' name='codigo' id='codigo' value='$itens[0]'/>";
+                    echo "<input type='hidden' name='acao' id='acao' value='excluirItemLista'/>";  
+                    echo "<td name='excluir' class='table-Default'>";
+                    echo "<button type='submit' class='btn btn-danger btn-sm'>Excluir</button>";
                     echo "</td>";
                     ?> 
                     </form>

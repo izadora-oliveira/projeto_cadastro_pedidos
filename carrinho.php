@@ -29,30 +29,31 @@ require("getItensCarrinho.php");
           $total = 0;
           foreach ($itenscarrinho as $item)
           {
-            $itenscarrinho = explode('#', $item);
             ?>
             <tr>
-            <form method="post" action="excluir.php">
+            <form method="post" action="manager.php">
               <?php
               echo "<td name ='codigo' class='table-Default'>";
-              echo "<input type='hidden' name='codigo' id='codigo' value='$itenscarrinho[0]'/>$itenscarrinho[0]";
+              echo "<input type='hidden' name='codigo' id='codigo' value='$item[0]'/>$item[0]";
               echo "</td>";
               echo "<td name='nome' class='table-Default'>";
-              echo "<input type='hidden' name='nome' id='nome' value='$itenscarrinho[1]'/>$itenscarrinho[1]";
+              echo "<input type='hidden' name='nome' id='nome' value='$item[1]'/>$item[1]";
               echo "</td>";
               echo "<td name='preco' class='table-Default'>";
-              echo "<input type='hidden' name='preco' id='preco' />R$ $itenscarrinho[2]";
+              echo "<input type='hidden' name='preco' id='preco' />R$ $item[2]";
               echo "</td>";
               echo "<td name='quantidade' class='table-Default'>";
-              echo "<input type='hidden' name='quantidade' id='quantidade'value='$itenscarrinho[3]'/>$itenscarrinho[3]";
+              echo "<input type='hidden' name='quantidade' id='quantidade'value='$item[3]'/>$item[3]";
               echo "</td>";
               echo "<td name='subtotal' class='table-Default'>";
-              echo "<input type='hidden' name='subtotal' id='subtotal'value='$itenscarrinho[4]'/>R$ $itenscarrinho[4]";
+              echo "<input type='hidden' name='subtotal' id='subtotal'value='$item[4]'/>R$ $item[4]";
               echo "</td>";
               echo "<td name='excluir' class='table-Default'>";
               echo "<button type='submit' class='btn btn-danger btn-sm'>Excluir</button>";
               echo "</td>";
-              $total += $itenscarrinho[4];
+              echo "<input type='hidden' name='acao' id='acao' value='excluirItemCarrinho'/>";
+
+              $total += $item[4];
               ?> 
             </form>
             </tr>
@@ -63,7 +64,7 @@ require("getItensCarrinho.php");
         </tbody>
       </table>
       <div>
-        <h5 class="card-title">Total <?php echo $total ?></h5>
+        <h5 class="card-title">Total R$ <?php echo $total ?></h5>
         <p class="card-text"></p>
       </div>
       </div>
@@ -73,7 +74,7 @@ require("getItensCarrinho.php");
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Informações Pedido</h5>
-        <form method="post" action="cadastroPedido.php">
+        <form method="post" action="manager.php">
           <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" name='nome' class="form-control" id="nome">
@@ -94,6 +95,7 @@ require("getItensCarrinho.php");
             <label for="observacao" class="form-label">Observação</label>
             <input type="text" name='observacao' class="form-control" id="observacao" rows="3"></input>
           </div>
+          <input type="hidden" name='acao' class="form-control" id="acao" value="cadastroPedido"></input>
           <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
         </form>
       </div>

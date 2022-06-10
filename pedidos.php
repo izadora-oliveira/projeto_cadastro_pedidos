@@ -47,7 +47,7 @@ foreach($info_cli as $cli){
                                         { 
                                             if ($value != $cli[0]){
                                             ?> 
-                                            <td><?php echo $value ?></td>
+                                            <td><?php $key == 3 || $key == 5 ? print "R$ ".$value : print $value ?></td>
                                             <?php
                                             if ($key == 5){
                                                 $total += $value;
@@ -91,15 +91,11 @@ foreach($info_cli as $cli){
                         ?>
                     </ol>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <form method="post" action="updatePedido.php">
+                        <form method="post" action="manager.php">
                         <input type='hidden' name='cod_cli' id='cod_cli' value='<?php echo $cli[0] ?>'/>
-                        <button type='submit' class='btn btn-success btn-sm'>Alterar</button>
-                        </form>
-                        <form method="post" action="deletePedido.php">
-                        <input type='hidden' name='cod_cli' id='cod_cli' value='<?php echo $cli[0] ?>'/>
+                        <input type='hidden' name='acao' id='acao' value='deletePedido'/>
                         <button type='submit' class='btn btn-danger btn-sm'>Excluir</button>
                         </form>
-                        
                     </div>
                 </div>
                 </div>
