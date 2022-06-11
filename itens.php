@@ -6,7 +6,7 @@
 <body>
 <?php
 include("navbar.php");
-require "getItens.php";
+include("manager.php");
 ?>
 
 <div class="card" style="width: 50rem;">
@@ -25,7 +25,7 @@ require "getItens.php";
         </thead>
         <tbody>
         <?php
-            $cont = 0;
+            $itens = getItens();
             foreach ($itens as $item) {
             $itens = explode('#', $item);
         ?>

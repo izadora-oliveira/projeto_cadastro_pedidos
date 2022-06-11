@@ -2,12 +2,14 @@
 <html lang="pt-br">
 <?php 
 include("header.php");
-require "getPedidos.php";
+include("manager.php");
 ?>
 <body>
 <?php
 include("navbar.php");
 $i=0;
+$pedidos = getPedidos();
+$info_cli = $pedidos[0];
 foreach($info_cli as $cli){
 ?>
 <div class="accordion" id="accordionExample">
@@ -36,7 +38,8 @@ foreach($info_cli as $cli){
                         </thead>
                         <tbody>
                             <?php 
-                            $total = 0; 
+                            $total = 0;
+                            $produtos = $pedidos[1];
                             foreach($produtos as $produto){
                                 ?> 
                                 <tr>

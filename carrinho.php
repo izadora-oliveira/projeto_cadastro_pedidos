@@ -6,7 +6,7 @@
 <body>
 <?php 
 include("navbar.php");
-require("getItensCarrinho.php"); 
+include("manager.php"); 
 ?>
 <div class="row">
   <div class="col-sm-6">
@@ -27,6 +27,7 @@ require("getItensCarrinho.php");
         <tbody>
           <?php
           $total = 0;
+          $itenscarrinho = getItensCarrinho();
           foreach ($itenscarrinho as $item)
           {
             ?>
