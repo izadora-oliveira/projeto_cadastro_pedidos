@@ -24,8 +24,6 @@ if(isset($_POST) && !empty($_POST))
             break;
     
         case 'cadastroPedido':
-            require("getItensCarrinho.php");
-    
             $data_cadastro = date('Y-m-d');
     
             $stmt = $conn->prepare("INSERT INTO info_pedido (nome_cli,endereco,data_entrega,hora,obs,data_cadastro) VALUES (?,?,?,?,?,?)");
@@ -42,7 +40,8 @@ if(isset($_POST) && !empty($_POST))
                     $cod_cli = $row['cod_cli'];
                 }
             }
-    
+            
+            $itenscarrinho = getItensCarrinho();
             foreach ($itenscarrinho as $item)
             {
     
