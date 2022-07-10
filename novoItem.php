@@ -19,8 +19,7 @@
         <label for="preco" class="form-label">Preço</label>
         <input type="double" class="form-control" name ="preco" id="preco">
       </div>
-      <input type="hidden" class="form-control" name ="acao" id="acao" value="novoItem">
-      <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
+      <input type="submit" name="novo_item" value="Cadastrar" class="btn btn-primary btn-sm"/>
       </form>
 
     </div>

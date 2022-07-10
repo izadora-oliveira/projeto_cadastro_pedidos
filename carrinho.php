@@ -6,7 +6,7 @@
 <body>
 <?php 
 include("navbar.php");
-include("manager.php"); 
+include("funcoes.php"); 
 ?>
 <div class="row">
   <div class="col-sm-6">
@@ -50,9 +50,8 @@ include("manager.php");
               echo "<input type='hidden' name='subtotal' id='subtotal'value='$item[4]'/>R$ $item[4]";
               echo "</td>";
               echo "<td name='excluir' class='table-Default'>";
-              echo "<button type='submit' class='btn btn-danger btn-sm'>Excluir</button>";
+              echo "<input type='submit' name='excluir_item_car' value='Excluir' class='btn btn-danger btn-sm'/>";
               echo "</td>";
-              echo "<input type='hidden' name='acao' id='acao' value='excluirItemCarrinho'/>";
 
               $total += $item[4];
               ?> 
@@ -96,8 +95,7 @@ include("manager.php");
             <label for="observacao" class="form-label">Observação</label>
             <input type="text" name='observacao' class="form-control" id="observacao" rows="3"></input>
           </div>
-          <input type="hidden" name='acao' class="form-control" id="acao" value="cadastroPedido"></input>
-          <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
+          <input type="submit" name="cadastrar_pedido" value="Cadastrar" class="btn btn-primary btn-sm"/>
         </form>
       </div>
     </div>

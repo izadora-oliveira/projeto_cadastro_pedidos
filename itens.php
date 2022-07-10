@@ -6,7 +6,7 @@
 <body>
 <?php
 include("navbar.php");
-include("manager.php");
+include("funcoes.php");
 ?>
 
 <div class="card" style="width: 50rem;">
@@ -45,17 +45,9 @@ include("manager.php");
                     echo "<input type='number' name='quantidade' id='quantidade'/>";
                     echo "</td>";
                     echo "<td name='adicionar' class='table-Default'>";
-                    echo "<button type='submit' class='btn btn-success btn-sm'>Adicionar</button>";
-                    echo "</td>";
-                    echo "<input type='hidden' name='acao' id='acao' value='adicionarItemCarrinho'/>";
-                    ?>
-                    </form>
-                    <form method="post" action="manager.php">
-                    <?php
-                    echo "<input type='hidden' name='codigo' id='codigo' value='$itens[0]'/>";
-                    echo "<input type='hidden' name='acao' id='acao' value='excluirItemLista'/>";  
+                    echo "<input type='submit' name='Adicionar' value='Adicionar' class='btn btn-success btn-sm'/>";
                     echo "<td name='excluir' class='table-Default'>";
-                    echo "<button type='submit' class='btn btn-danger btn-sm'>Excluir</button>";
+                    echo "<input type='submit' name='excluir_item' value='Excluir' class='btn btn-danger btn-sm'/>";
                     echo "</td>";
                     ?> 
                     </form>

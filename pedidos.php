@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php 
 include("header.php");
-include("manager.php");
+include("funcoes.php");
 ?>
 <body>
 <?php
@@ -96,8 +96,7 @@ foreach($info_cli as $cli){
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <form method="post" action="manager.php">
                         <input type='hidden' name='cod_cli' id='cod_cli' value='<?php echo $cli[0] ?>'/>
-                        <input type='hidden' name='acao' id='acao' value='deletePedido'/>
-                        <button type='submit' class='btn btn-danger btn-sm'>Excluir</button>
+                        <input type='submit' name='deletePedido' value='Excluir' class='btn btn-danger btn-sm'/>
                         </form>
                     </div>
                 </div>
