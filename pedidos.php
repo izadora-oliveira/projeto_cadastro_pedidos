@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
 <?php 
 include("header.php");
 include("funcoes.php");
@@ -7,6 +7,7 @@ include("funcoes.php");
 <body>
 <?php
 include("navbar.php");
+
 $i=0;
 $pedidos = getPedidos();
 $info_cli = $pedidos[0];

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="pt-br">
 
 <?php include("header.php") ?>
 
@@ -9,7 +8,7 @@ include("navbar.php");
 include("funcoes.php");
 ?>
 
-<div class="card" style="width: 50rem;">
+<div class="card">
     <div class="card-body">
       <h5 class="card-title">Itens</h5>
         <table class="table">
@@ -21,6 +20,7 @@ include("funcoes.php");
             <th scope="col">Quantidade</th>
             <th scope="col">Adicionar</th>
             <th scope="col">Excluir</th>
+            <th scope="col">Alterar</th>
             </tr>
         </thead>
         <tbody>
@@ -45,9 +45,13 @@ include("funcoes.php");
                     echo "<input type='number' name='quantidade' id='quantidade'/>";
                     echo "</td>";
                     echo "<td name='adicionar' class='table-Default'>";
-                    echo "<input type='submit' name='Adicionar' value='Adicionar' class='btn btn-success btn-sm'/>";
+                    echo "<input type='submit' name='adicionaCarrinho' value='Adicionar' class='btn btn-success btn-sm'/>";
+                    echo "</td>";
                     echo "<td name='excluir' class='table-Default'>";
                     echo "<input type='submit' name='excluir_item' value='Excluir' class='btn btn-danger btn-sm'/>";
+                    echo "</td>";
+                    echo "<td name='alterar' class='table-Default'>";
+                    echo "<a class='btn btn-warning btn-sm' href='alterarItem.php?codigo=$itens[0]&nome=$itens[1]&preco=$itens[2]' role='button'>Alterar</a>";
                     echo "</td>";
                     ?> 
                     </form>

@@ -8,7 +8,7 @@ function getItens(){
     $itens = array();
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
-        $itens[] = $row['codigo'] . '#' . $row['nome'] . "#" . $row['preco'];
+        $itens[] = $row['cod_produto'] . '#' . $row['nome'] . "#" . $row['preco'];
       }
     } else {
     

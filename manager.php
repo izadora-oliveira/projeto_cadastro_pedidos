@@ -16,7 +16,7 @@ if(isset($novo_item) && !empty($novo_item))
     $preco = str_replace(",",".",$preco);
     
     $stmt = $conn->prepare("INSERT INTO itens (nome,preco) VALUES (?,?)");
-    $stmt->bind_param("sd", $item, $preco);
+    $stmt->bind_param("sd", $nome, $preco);
     $stmt->execute();
     $conn->close();
     echo ("<script>
@@ -73,8 +73,8 @@ if(isset($excluir_item_car) && !empty($excluir_item_car))
     </script>");
 }   
 
-if(isset($Adicionar) && !empty($Adicionar))
-{  
+if(isset($adicionaCarrinho) && !empty($adicionaCarrinho))
+{      
     $subtotal = $preco * $quantidade;
     
     $query_ = "SELECT quantidade,subtotal FROM carrinho where codigo = $codigo";
@@ -90,7 +90,7 @@ if(isset($Adicionar) && !empty($Adicionar))
 
         echo ("<script>
                 window.alert('Adicionado com Sucesso!')
-                window.location.href='itens.php';
+                window.location.href='index.php';
             </script>");
     }else{
         $stmt = $conn->prepare("INSERT INTO carrinho (codigo,nome,preco,quantidade,subtotal) VALUES (?,?,?,?,?)");
@@ -99,7 +99,7 @@ if(isset($Adicionar) && !empty($Adicionar))
         $conn->close();
         echo ("<script>
                 window.alert('Adicionado com Sucesso!')
-                window.location.href='itens.php';
+                window.location.href='index.php';
             </script>");
     }
 }
@@ -120,11 +120,23 @@ if(isset($deletePedido) && !empty($deletePedido))
 
 if(isset($excluir_item) && !empty($excluir_item))
 {  
-    $query_ = "DELETE FROM `itens` WHERE `codigo` = $codigo";
+    $query_ = "DELETE FROM `itens` WHERE `cod_produto` = $codigo";
     $result = $conn->query($query_);
 
     echo ("<script>
     window.alert('Item Excluido!')
-    window.location.href='itens.php';
+    window.location.href='index.php';
     </script>");
 }    
+
+if(isset($alterar_item) && !empty($alterar_item))
+{  
+    $stmt = $conn->prepare("UPDATE `itens` SET `nome` = '$nome', `preco` = '$preco' WHERE cod_produto = $codigo");
+    $stmt->execute();
+    $conn->close();
+
+    echo ("<script>
+    window.alert('Item Alterado com Sucesso!')
+    window.location.href='index.php';
+    </script>");
+} 
