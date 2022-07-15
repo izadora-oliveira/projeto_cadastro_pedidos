@@ -131,6 +131,8 @@ if(isset($excluir_item) && !empty($excluir_item))
 
 if(isset($alterar_item) && !empty($alterar_item))
 {  
+    $preco = str_replace(",",".",$preco);
+    
     $stmt = $conn->prepare("UPDATE `itens` SET `nome` = '$nome', `preco` = '$preco' WHERE cod_produto = $codigo");
     $stmt->execute();
     $conn->close();
