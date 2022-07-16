@@ -5,7 +5,7 @@
 <body>
 <?php 
 include("navbar.php");
-include("funcoes.php"); 
+include("manager.php"); 
 ?>
 <div class="row">
   <div class="col-sm-6">
@@ -31,7 +31,7 @@ include("funcoes.php");
           {
             ?>
             <tr>
-            <form method="post" action="manager.php">
+            <form method="post" action="controller.php">
               <?php
               echo "<td name ='codigo' class='table-Default'>";
               echo "<input type='hidden' name='codigo' id='codigo' value='$item[0]'/>$item[0]";
@@ -73,7 +73,7 @@ include("funcoes.php");
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Informações Pedido</h5>
-        <form method="post" action="manager.php">
+        <form method="post" action="controller.php">
           <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" name='nome' class="form-control" id="nome">

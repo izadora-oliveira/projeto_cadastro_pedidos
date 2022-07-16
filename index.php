@@ -5,7 +5,7 @@
 <body>
 <?php
 include("navbar.php");
-include("funcoes.php");
+include("manager.php");
 ?>
 
 <div class="card">
@@ -30,7 +30,7 @@ include("funcoes.php");
             $itens = explode('#', $item);
         ?>
                 <tr>
-                <form method="post" action="manager.php">
+                <form method="post" action="controller.php">
                   <?php
                     echo "<td name ='codigo' class='table-Default'>";
                     echo "<input type='hidden' name='codigo' id='codigo' value='$itens[0]'/>$itens[0]";

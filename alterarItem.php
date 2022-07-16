@@ -9,7 +9,7 @@
     <div class="card-body">
       <h5 class="card-title">Alterar Item</h5>
 
-      <form method="post" action="manager.php">
+      <form method="post" action="controller.php">
       <div class="mb-3">
         <label for="item" class="form-label">Código</label>
         <input type="number" class="form-control" name="codigo" value="<?php echo $_GET['codigo'] ?>" readonly="readonly" />

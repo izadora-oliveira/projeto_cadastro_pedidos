@@ -9,7 +9,7 @@
     <div class="card-body">
       <h5 class="card-title">Novo Item</h5>
 
-      <form method="post" action="manager.php">
+      <form method="post" action="controller.php">
       <div class="mb-3">
         <label for="item" class="form-label">Item</label>
         <input type="text" class="form-control" name ="nome" id="item">
